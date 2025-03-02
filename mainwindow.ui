@@ -27,7 +27,6 @@
      <font>
       <family>DejaVu Sans</family>
       <pointsize>20</pointsize>
-      <weight>75</weight>
       <italic>true</italic>
       <bold>true</bold>
       <kerning>true</kerning>
@@ -56,12 +55,32 @@
     </item>
     <item>
      <property name="text">
-      <string>Science</string>
+      <string>Physics </string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Chemistry</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Biology</string>
      </property>
     </item>
     <item>
      <property name="text">
       <string>English</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Information Technology</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>EVS</string>
      </property>
     </item>
    </widget>
@@ -101,7 +120,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QSpinBox" name="spinBox">
+   <widget class="QSpinBox" name="totmarks">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -122,7 +141,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -169,7 +187,7 @@
      <string>Select Marks Per Question</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="generateTest">
     <property name="geometry">
      <rect>
       <x>622</x>
@@ -182,6 +200,34 @@
      <string>Generate Test</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>150</y>
+      <width>141</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>No of Questions</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="questioncount">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>150</y>
+      <width>45</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -189,7 +235,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

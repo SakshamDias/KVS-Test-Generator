@@ -3,7 +3,10 @@
 
 #include <QMainWindow>
 #include <QComboBox>
+#include <QList>
 
+
+struct Question;
 namespace Ui {
 class MainWindow;
 }
@@ -22,6 +25,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;  // The Ui object that represents your UI
+    void generateTest();
+    QList<Question> loadQuestionsFromCSV(const QString &filePath);
+    void saveToDocFile(const QList<Question> &questions, const QString &subject, const QString &topic);
 };
 
 #endif // MAINWINDOW_H
