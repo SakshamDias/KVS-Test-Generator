@@ -526,13 +526,14 @@ void MainWindow::generateTest()
     QString topic = ui->topic->currentText();
     int marksPerQuestion = ui->marks->currentText().toInt();
     int numQuestions = ui->questioncount->value();
+    int totalMarks = ui->totmarks->value();
 
     QList<Question> allQuestions = loadQuestionsFromCSV("questions_final.csv");
     QList<Question> filteredQuestions;
 
     // Filter questions based on user selection
     for (const Question &q : allQuestions) {
-        if (q.subject == subject && q.topic == topic && q.marks == marksPerQuestion) {
+        if (q.subject == subject && q.topic == topic && q.marks == marksPerQuestion && marksPerQuestion*numQuestions == totalMarks) {
             filteredQuestions.append(q);
         }
     }
@@ -608,6 +609,7 @@ QList<Question> MainWindow::loadQuestionsFromCSV(const QString &filePath)
 
 void MainWindow::saveToDocFile(const QList<Question> &questions, const QString &subject, const QString &topic)
 {
+    int totmarks = ui->totmarks->value();
     QString filePath = QFileDialog::getSaveFileName(this, "Save Question Paper", "QuestionPaper.doc", "Word Document (*.doc)");
 
     if (filePath.isEmpty()) return; // If user cancels
@@ -619,6 +621,7 @@ void MainWindow::saveToDocFile(const QList<Question> &questions, const QString &
     }
 
     QTextStream out(&file);
+    out << "Total Marks = " << totmarks << "\n" ;
     out << "Subject: " << subject << "\n";
     out << "Topic: " << topic << "\n\n";
     out << "Generated Question Paper\n";

@@ -18,6 +18,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    int totalMarks ;
+    int totmarks;
 
 private slots:
     void updateTopics(int index);
